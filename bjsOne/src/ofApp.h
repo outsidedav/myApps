@@ -38,4 +38,6 @@ class ofApp : public ofBaseApp{
         ofxPanel mGui;
     
     
+    bool pdfRendering = false;
+    
 };

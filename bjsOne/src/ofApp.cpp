@@ -40,7 +40,7 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     
-    ofBackground(255);
+    //ofBackground(255);
     
     
     //add json data to vector
@@ -88,12 +88,28 @@ void ofApp::draw(){
     
     //add Gui control
    mGui.draw();
+    
+    
+    
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
     
-    
+    if( key=='r'){
+        //flip a boolean member variable
+        pdfRendering = !pdfRendering;
+        if( pdfRendering ){
+            //play around with this number to determine the optimal number of pages for your needs
+            ofSetFrameRate(12);  // so it doesn't generate tons of pages
+            //ofGetTimestampString is another timestamp variable and it's formatted nicely for filenames
+            ofBeginSaveScreenAsPDF("recording-"+ofGetTimestampString()+".pdf", true);
+        }else{
+            ofSetFrameRate(60);
+            ofEndSaveScreenAsPDF();
+        }
+    }
 }
 
 //--------------------------------------------------------------
