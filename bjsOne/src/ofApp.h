@@ -22,7 +22,20 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+    
+        vector<int> vAge;
+        vector<float> vWeight;
 		
         ofxJSONElement json;
+    
+    
+        int threshold = 10;
+
+    
+        ofxFloatSlider mHeightSlider;
+        ofxFloatSlider mWidthSlider;
+        ofxFloatSlider mPadSlider;
+        ofxPanel mGui;
+    
     
 };
